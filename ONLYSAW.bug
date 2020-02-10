@@ -11,6 +11,7 @@ model {
    }
    
    # prior on parameters
+   #B 	~ dgamma(1, 1/sc_B);
    B 	~ dunif(0, max_B);
    
 }   

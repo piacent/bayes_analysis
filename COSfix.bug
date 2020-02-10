@@ -12,6 +12,7 @@ model {
 
    # prior on parameters	
    
-   A 	 ~ dunif(0, max_A);
+   #A 	 ~ dunif(0, max_A);
+   A 	 ~ dgamma(1, 1/sc_A);
    
 }   
