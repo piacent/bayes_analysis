@@ -1,0 +1,16 @@
+model {	
+
+   for (i in 1:n) {
+   
+      # data assumed poissonian with intensity lambda 
+      
+      x[i] ~ dnorm(bkg[i], 1/sd[i]^2)
+      
+      
+      bkg[i] <- -(B * v) / 2 + B * (t[i] - ft[i])    
+   }
+   
+   # prior on parameters
+   B 	~ dunif(B_0 - width_B, B_0 + width_B);
+   
+}   

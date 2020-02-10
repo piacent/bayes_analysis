@@ -1,0 +1,18 @@
+model {	
+
+   for (i in 1:n) {
+   
+      # data assumed poissonian with intensity lambda 
+      
+      x[i] ~ dnorm(sig[i], 1./(sd[i]^2))
+      
+      sig[i] <- A * cos(2. * pi * t[i] / v + phi )
+      
+   }
+
+   # prior on parameters	
+   
+   A 	 ~ dunif(0, max_A);
+   phi 	 ~ dunif(0, max_phi);
+   
+}   
