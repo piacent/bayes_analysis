@@ -7,10 +7,10 @@ model {
       x[i] ~ dnorm(bkg[i], 1/sd[i]^2)
       
       
-      bkg[i] <- -(B * v) / 2 + B * (t[i] - ft[i])    
+      bkg[i] <- B * ft[i]
    }
    
    # prior on parameters
-   B 	~ dunif(B_0 - width_B, B_0 + width_B);
+   B 	~ dunif(0, max_B);
    
 }   
