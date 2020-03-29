@@ -8,12 +8,11 @@ model {
       
       bkg[i] <- B * ft[i]        
       
-      sig[i] <- A * cos(2 * pi * t[i] / v + phi)
+      sig[i] <- A * cos(2 * pi * t[i] / T + phi)
    }
    
    # prior on parameters
-   A 	~ dgamma(1, 1/sc_A);
-   #A 	~ dunif(0, max_A);
-   B 	~ dunif(0, max_B);
+   A 	~ dunif(0, max_A);
+   B 	~ dunif(-width_B+B_0, width_B +B_0);
    
 }   

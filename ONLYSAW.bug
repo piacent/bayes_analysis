@@ -8,10 +8,10 @@ model {
       
       
       bkg[i] <- B * ft[i]
+      
    }
    
    # prior on parameters
-   #B 	~ dgamma(1, 1/sc_B);
-   B 	~ dunif(0, max_B);
+   B 	~ dunif(-width_B+B_0, width_B+B_0);
    
 }   
